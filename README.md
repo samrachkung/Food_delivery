@@ -3,26 +3,46 @@
 Clone this repository or download the ZIP file
 Make sure that you have Node.js and NPM installed
 Install the project dependencies from the `package.json` file:
+you need to use split 3 terminal 
+
 Frontend Run on http://localhost:5173
 
-```cd frontend```
+```
+cd frontend
+```
 
-```npm install```
+```
+npm install
+```
 
-```npm run dev```
+```
+npm run dev
+```
 
 Backend Run on http://localhost:4000
 
-```cd backend```
+```
+cd backend
+```
 
-```npm install```
+```
+npm install
+```
 
-```npm run server```
+```
+npm run server
+```
 
 Admin Run on http://localhost:5173
 
-```cd admin```
+```
+cd admin
+```
 
-```npm install```
+```
+npm install
+```
 
-```npm run dev```
+```
+npm run dev
+```
