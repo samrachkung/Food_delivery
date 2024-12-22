@@ -21,7 +21,7 @@ const resources = {
       "Password": "Password",
       "Name": "Name",
       "I agree to the terms and conditions": "I agree to the terms and conditions",
-      // Add other translations here
+ 
     }
   },
   km: {
@@ -42,7 +42,6 @@ const resources = {
       "Password": "ពាក្យសម្ងាត់",
       "Name": "ឈ្មោះ",
       "I agree to the terms and conditions": "ខ្ញុំយល់ព្រមនឹងលក្ខខណ្ឌ",
-      // Add other translations here
     }
   }
 };
