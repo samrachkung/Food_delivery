@@ -1,18 +1,42 @@
+// filepath: /c:/Users/Kun SramRach/Desktop/MVC-EXPRESS-REACT-APP/frontend/src/components/Navbar/Navbar.jsx
 import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = ({ setShowlogin }) => {
   const [menu, setMenu] = useState("home");
-  const { getTotalAmount, token, setToken } = useContext(StoreContext);
+  const { getTotalAmount, token, setToken, food_list } = useContext(StoreContext);
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
     navigate("/");
   };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const handleSearch = (event) => {
+    const query = event.target.value.toLowerCase();
+    setSearchQuery(query);
+    if (query.length > 0) {
+      const results = food_list.filter(item =>
+        item.name.toLowerCase().includes(query)
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
+
   return (
     <div className='navbar'>
       <Link to='/'><img src={assets.logo} alt="Logo" className="logo" /></Link>
@@ -23,6 +47,23 @@ const Navbar = ({ setShowlogin }) => {
         <a href='#footer' onClick={() => setMenu("Contact-us")} className={menu === "Contact-us" ? "active" : ""}>Contact Us</a>
       </ul>
       <div className='navbar-right'>
+        <input
+          type="text"
+          placeholder="Search food..."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="navbar-search-input"
+        />
+        <div className="navbar-search-results">
+          {searchResults.map((item, index) => (
+            <div key={index} className="navbar-search-result-item">
+              <Link to={`/food/${item._id}`}>
+                <img src={item.image} alt={item.name} />
+                <p>{item.name}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
         <img src={assets.search_icon} alt="Search" />
         <div className="navbar-search-icon">
           <Link to='/cart'><img src={assets.basket_icon} alt="Cart" /></Link>
@@ -46,6 +87,8 @@ const Navbar = ({ setShowlogin }) => {
             </ul>
           </div>
         )}
+        <button onClick={() => changeLanguage('en')}>ENGLISH</button>
+        <button onClick={() => changeLanguage('km')}>KHMER</button>
       </div>
     </div>
   );

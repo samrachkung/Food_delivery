@@ -82,6 +82,41 @@
 .nav-profile-dropdown li:hover{
     color: tomato;
 }
+
+.navbar-search-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .navbar-search-results {
+    position: absolute;
+    background-color: white;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    width: 200px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .navbar-search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .navbar-search-result-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .navbar-search-result-item p {
+    margin: 0;
+  }
 @media (max-width:1050px) {
     .navbar .logo{
        width: 140px; 

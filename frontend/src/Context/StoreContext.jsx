@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+import { useTranslation } from 'react-i18next'; 
 
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
@@ -8,6 +9,8 @@ const StoreContextProvider = (props) => {
     const url = "http://localhost:4000";
     const [token, setToken] = useState("")
     const [food_list, setFoodlist] = useState([])
+    const [error, setError] = useState(null);
+    const { i18n } = useTranslation();
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
             setCartItem((prev) => ({ ...prev, [itemId]: 1 }));
@@ -47,6 +50,7 @@ const StoreContextProvider = (props) => {
     const fetchFoodlist = async () => {
         try {
             const response = await axios.get(url + "/api/food/list");
+            
             setFoodlist(response.data.data);
         } catch (error) {
             console.error("Error fetching food list", error);
