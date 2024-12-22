@@ -64,7 +64,7 @@ const PlaceOrder = () => {
     return (
         <form onSubmit={placeOrder} className="place-order">
             <div className="place-order-left">
-                <p className="title">Your Information For Delivery</p>
+                <p className="title">Your Information For Delivery​ - ព័ត៌មានរបស់អ្នកសម្រាប់ការដឹកជញ្ជូន​​</p>
                 <div className="multi-fields">
                     <input
                         required
@@ -72,7 +72,7 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         value={data.firstName}
                         type="text"
-                        placeholder="First name"
+                        placeholder="First name - នាមត្រកូល"
                     />
                     <input
                         required
@@ -80,7 +80,7 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         value={data.lastName}
                         type="text"
-                        placeholder="Last name"
+                        placeholder="Last name - នាម​​"
                     />
                 </div>
                 <input
@@ -89,7 +89,7 @@ const PlaceOrder = () => {
                     onChange={onChangeHandler}
                     value={data.email}
                     type="email"
-                    placeholder="Email Address"
+                    placeholder="Email Address​  - អុីមែល"
                 />
                 <input
                     required
@@ -97,7 +97,7 @@ const PlaceOrder = () => {
                     onChange={onChangeHandler}
                     value={data.street}
                     type="text"
-                    placeholder="Street"
+                    placeholder="Street - ផ្លូវ"
                 />
                 <div className="multi-fields">
                     <input
@@ -106,7 +106,7 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         value={data.city}
                         type="text"
-                        placeholder="City"
+                        placeholder="City - ទីក្រុង"
                     />
                     <input
                         required
@@ -114,7 +114,7 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         value={data.state}
                         type="text"
-                        placeholder="State"
+                        placeholder="State - រដ្ឋ"
                     />
                 </div>
                 <div className="multi-fields">
@@ -132,7 +132,7 @@ const PlaceOrder = () => {
                         onChange={onChangeHandler}
                         value={data.country}
                         type="text"
-                        placeholder="Country"
+                        placeholder="Country - ប្រទេស"
                     />
                 </div>
                 <input
@@ -141,7 +141,7 @@ const PlaceOrder = () => {
                     onChange={onChangeHandler}
                     value={data.phone}
                     type="text"
-                    placeholder="Phone Number"
+                    placeholder="Phone Number - លេខទូរស័ព្ទ"
                 />
             </div>
             <div className="place-order-right">

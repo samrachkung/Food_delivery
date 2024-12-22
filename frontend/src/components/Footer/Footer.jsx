@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-content-left">
         <img src={assets.logo} alt="" />
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aliquam reiciendis consequatur vitae. Quam debitis, cumque quisquam, est sint error illo tenetur nisi quo temporibus accusamus, magni molestias maxime veniam.</p>
+        <p>This project for my internship </p>
         <div className="footer-socail-icons">
             <img src={assets.facebook_icon} alt="" />
             <img src={assets.twitter_icon} alt="" />
@@ -27,7 +27,7 @@ const Footer = () => {
             <h2>GET IN TOUCH</h2>
             <ul>
                 <li>+855-889-766-44</li>
-                <li>Samrach@gmail.com</li>
+                <li>Samrach088@gmail.com</li>
             </ul>
         </div>
       </div>
