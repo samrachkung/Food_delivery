@@ -13,6 +13,8 @@ const Navbar = ({ setShowlogin }) => {
   const { i18n } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -22,6 +24,7 @@ const Navbar = ({ setShowlogin }) => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setIsLanguageDropdownOpen(false);
   };
 
   const handleSearch = (event) => {
@@ -36,6 +39,15 @@ const Navbar = ({ setShowlogin }) => {
       setSearchResults([]);
     }
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+  };
+
 
   return (
     <div className='navbar'>
@@ -87,8 +99,17 @@ const Navbar = ({ setShowlogin }) => {
             </ul>
           </div>
         )}
-        <button onClick={() => changeLanguage('en')}>ENGLISH</button>
-        <button onClick={() => changeLanguage('km')}>KHMER</button>
+       <div className="language-dropdown">
+          <button onClick={toggleLanguageDropdown}>
+            {i18n.language === 'en' ? 'ENGLISH' : 'KHMER'}
+          </button>
+          {isLanguageDropdownOpen && (
+            <ul className="language-dropdown-menu">
+              <li onClick={() => changeLanguage('en')}>ENGLISH</li>
+              <li onClick={() => changeLanguage('km')}>KHMER</li>
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

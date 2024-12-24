@@ -19,7 +19,7 @@
 .header-contents h2{
     font-weight: 500;
     color: aliceblue;
-    font-size: max(3.5vw,22px);
+    font-size: max(2.5vw,22px);
 }
 .header-contents p {
     color: aliceblue;
@@ -29,7 +29,7 @@
     border: none;
     color: #747474;
     font-weight: 500;
-    padding: 1vw 2.3vw;
+    padding: 1vw 1.3vw;
     background-color: aliceblue;
     font-size: max(1vw,13px);
     border-radius: 50px;
@@ -40,10 +40,29 @@
         max-width: 45%;
     }
 }
+@media (max-width:900px) {
+   
+     .header-contents{
+       margin-top: 10px 0px;
+         max-width: 65%;
+     }
+     .header-contents h2{
+        font-size: max(0.5vw,0px);
+     }
+     .header-contents p{
+        display: none;
+     }
+     .header-contents{
+        padding: 2vw 4vw;
+     }
+ }
 @media (max-width:750px) {
    
      .header-contents{
          max-width: 65%;
+     }
+     .header-contents h2{
+        font-size: max(2.5vw,18px);
      }
      .header-contents p{
         display: none;
