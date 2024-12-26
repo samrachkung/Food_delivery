@@ -85,3 +85,28 @@
     border-radius: 4px;
     cursor: pointer;
 }
+@media (max-width:900px){
+    .cart-item-title{
+        font-size: 8px;
+    }
+    .cart-item-item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    .cart-item-item img{
+        width: 50px;
+    }
+    .cart-item-item .cross{
+        padding: 5px 10px;
+    }
+    .cart-bottom button{
+        padding: 5px 10px;
+    }
+    .cart-promocode-input{
+        padding: 10px;
+    }
+    .cart-promocode-input input{
+        padding: 5px;
+    }
+}

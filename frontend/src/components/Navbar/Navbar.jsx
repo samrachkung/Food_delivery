@@ -61,7 +61,7 @@ const Navbar = ({ setShowlogin }) => {
       <div className='navbar-right'>
         <input
           type="text"
-          placeholder="Search food..."
+          placeholder="Search food here..."
           value={searchQuery}
           onChange={handleSearch}
           className="navbar-search-input"
@@ -69,7 +69,7 @@ const Navbar = ({ setShowlogin }) => {
         <div className="navbar-search-results">
           {searchResults.map((item, index) => (
             <div key={index} className="navbar-search-result-item">
-              <Link to={`/food/${item._id}`}>
+              <Link to={`localhost4000/api/food/${item._id}`}>
                 <img src={item.image} alt={item.name} />
                 <p>{item.name}</p>
               </Link>

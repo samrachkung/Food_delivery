@@ -11,8 +11,8 @@ const Cart = () => {
     <div className="cart">
       <div className="cart-items">
         <div className="cart-item-title">
-          <p>Item Image</p>
-          <p>Item Numbering</p>
+          <p>Image</p>
+          <p>Numbering</p>
           <p>Title</p>
           <p>Price</p>
           <p>Quantity</p>

@@ -54,3 +54,25 @@
     background-color: #45a049; /* Darker green on hover */
   }
   
+  @media (max-width:900px){
+    .place-order{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .place-order-left, .place-order-right{
+        max-width: 100%;
+    }
+    .place-order-left .title{
+        font-size: 25px;
+    }
+  }
+  
+  @media (max-width:800px){
+    .place-order{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .place-order-left, .place-order-right{
+        max-width: 100%;
+    }
+  }
